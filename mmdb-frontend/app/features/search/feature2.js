@@ -32,8 +32,6 @@ angular
           'src', 'data:image/png;base64,' + encodedImage
         );
 
-        // $('label[id=browseBtn]')[0].innerText = "Selected File: " + file.name;
-
         var scope = angular.element(document.getElementById('outer')).scope();
         scope.$apply(function(){
             scope.selectedImage = encodedImage;
