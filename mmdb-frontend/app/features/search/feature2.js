@@ -11,9 +11,13 @@ angular
       })
     ;
   })
-  .controller('Feature2Ctrl', function ($scope, $document, $timeout, httpInterface) {    
-    $scope.images = [];
+  .controller('Feature2Ctrl', function ($scope, $document, $timeout, httpInterface) {
     $scope.inputObject = $('input[name=userFile]');
+    
+    $scope.images = [];
+    $scope.isFileSelected = false;
+    $scope.fileName = "";
+    $scope.selectedImage = undefined;
     
     $scope.inputObject.change(function(event) {
       var file = $scope.inputObject[0].files[0];
@@ -27,8 +31,21 @@ angular
         $('img[id=uploaded]')[0].setAttribute(
           'src', 'data:image/png;base64,' + encodedImage
         );
-        
-        httpInterface.getResults(encodedImage).then(function(data) {
+
+        // $('label[id=browseBtn]')[0].innerText = "Selected File: " + file.name;
+
+        var scope = angular.element(document.getElementById('outer')).scope();
+        scope.$apply(function(){
+            scope.selectedImage = encodedImage;
+            scope.fileName = file.name;
+            scope.isFileSelected = true;
+        });
+      };
+    });
+
+    $scope.upload = function () {
+      if($scope.selectedImage){
+        httpInterface.getResults($scope.selectedImage).then(function(data) {
           $scope.images = data.data;
 
           if($scope.images && $scope.images.length == 12){
@@ -40,11 +57,14 @@ angular
             });
           }
         });
-      };
-    });
+      }
+    }
 
     $scope.clear = function () {
       $scope.images = [];
+      $scope.isFileSelected = false;
+      $scope.fileName = "";
+      $scope.selectedImage = undefined;
     }
 
   })

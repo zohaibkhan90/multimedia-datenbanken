@@ -17,9 +17,13 @@
 
 .uploaded-text {
 	vertical-align: top;
-    font-size: 21px;
-    font-weight: 200;
-    padding-top: 56px;
-    padding-left: 40px;
-    padding-right: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  padding-top: 56px;
+  padding-left: 40px;
+  padding-right: 30px;
+}
+
+.selected-text {
+  padding-bottom: 10px;
 }
