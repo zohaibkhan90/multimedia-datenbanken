@@ -1,0 +1,4 @@
+java.lang.IllegalArgumentException: Missing scheme
+	at java.nio.file.Paths.get(Paths.java:134)
+	at org.lira.IndexService.search(IndexService.java:140)
+	at org.lira.IndexService.main(IndexService.java:59)

@@ -1,0 +1,337 @@
+{
+	"id": "70bc9835-238d-99da-d38d-838809eecdeb",
+	"name": "Multimedia APIs",
+	"description": "calls for all the APIs required in phase 2",
+	"order": [
+		"e7202ef3-ed24-3c5c-5e23-ac789087801e",
+		"2b00d492-bf26-ba0a-5db1-2b3aff29ce79",
+		"562a5811-0e12-98d3-68b3-aa9143e261f3",
+		"251be215-2df1-bc44-5ecf-b5d7a49be139",
+		"818a5d3b-7343-e7d9-b0cf-49bf0c99fd50",
+		"e31b728b-6604-8e3d-fff1-a345d666031d",
+		"66f2d9dd-99c2-7643-bf4d-57c0d6da9b07",
+		"b84fcd3e-1dfd-9996-68d1-047c5da0b678"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1526307067467,
+	"owner": "1404144",
+	"public": false,
+	"requests": [
+		{
+			"id": "251be215-2df1-bc44-5ecf-b5d7a49be139",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/deleteIndex?indexName=my_index2",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "my_index2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310552282,
+			"name": "delete Index",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "2b00d492-bf26-ba0a-5db1-2b3aff29ce79",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/exists?indexName=images_index",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "images_index",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310542711,
+			"name": "index exists",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "562a5811-0e12-98d3-68b3-aa9143e261f3",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/createIndex",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "indexName",
+					"value": "my_index2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310550006,
+			"name": "create Index",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "66f2d9dd-99c2-7643-bf4d-57c0d6da9b07",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/remove?indexName=images_index&entryName=resources/imageA.jpg",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "images_index",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entryName",
+					"value": "resources/imageA.jpg",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310558326,
+			"name": "remove",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "818a5d3b-7343-e7d9-b0cf-49bf0c99fd50",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/truncateIndex?indexName=images_index",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "images_index",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310554124,
+			"name": "truncate Index",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "b84fcd3e-1dfd-9996-68d1-047c5da0b678",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/listSimilarEntries?indexName=images_index&entryName=resources/bird.jpg",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "images_index",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "entryName",
+					"value": "resources/bird.jpg",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310560473,
+			"name": "list similar entries",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "e31b728b-6604-8e3d-fff1-a345d666031d",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/insert?",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "indexName",
+					"value": "images_index",
+					"description": "name of the index in which you want the entry to be added",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "entryName",
+					"value": "resources/imageA.jpg",
+					"description": "complete path of the image on your directory",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310556459,
+			"name": "insert",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		},
+		{
+			"id": "e7202ef3-ed24-3c5c-5e23-ac789087801e",
+			"headers": "Authorization: Basic R05DOklORk9SMQ==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic R05DOklORk9SMQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/index/listIndexes?indexName=indexes",
+			"queryParams": [
+				{
+					"key": "indexName",
+					"value": "indexes",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526310540845,
+			"name": "list indexes",
+			"description": "",
+			"collectionId": "70bc9835-238d-99da-d38d-838809eecdeb",
+			"responses": []
+		}
+	]
+}
