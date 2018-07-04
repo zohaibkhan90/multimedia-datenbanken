@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.math.BigDecimal;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +19,7 @@ import oracle.CartridgeServices.InvalidKeyException;
 import oracle.ODCI.ODCIRidList;
 import oracle.jdbc.OracleBfile;
 import oracle.jdbc.OracleDriver;
+import oracle.jdbc.OracleResultSet;
 import oracle.sql.CustomDatum; 
 import oracle.sql.CustomDatumFactory;
 import oracle.sql.Datum; 
@@ -132,6 +134,32 @@ public class ODCIIndex implements CustomDatum, CustomDatumFactory {
 		}
 		return path;
 	}
+	
+	
+	/**
+	 * @param dirAlias
+	 * @return path for the dirAlias provided, queried from dba_directories table of oracle.
+	 */
+	private static void indexExistingImages(oracle.ODCI.ODCIIndexInfo indexInfo){
+		//
+		try{
+			Connection connection = null;
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("Indexing any existing images from Table");
+	        connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl", "sys as sysdba", "oracle");
+	        String selectSQL = "SELECT ROWID as RID, COLUMN1 from IMG_TABLE";
+			PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
+			OracleResultSet rs = (OracleResultSet)preparedStatement.executeQuery(selectSQL );
+			while (rs.next()) {
+				OracleBfile bfile =  rs.getBfile("COLUMN1");
+				String rid = rs.getString("RID");
+				ODCIIndexInsert(indexInfo, rid, bfile, null);				
+			}
+			System.out.println("Indexing of existing images completed");
+		} catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
 
 	/**
 	 * @param indexInfo
@@ -147,6 +175,7 @@ public class ODCIIndex implements CustomDatum, CustomDatumFactory {
 			Map<String, String> parameters = new HashMap<String, String>();
 			parameters.put("indexName", indexInfo.getIndexName());
 			System.out.println(HttpUtil.executeMethod("Post", url, parameters));
+			indexExistingImages(indexInfo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
@@ -261,6 +290,7 @@ public class ODCIIndex implements CustomDatum, CustomDatumFactory {
 			oracle.ODCI.ODCIQueryInfo qi, java.math.BigDecimal strt, java.math.BigDecimal stop,
 			java.lang.String cmpval, oracle.ODCI.ODCIEnv env) {
 		init(BASE_PATH);
+		
 		String url = BASE_URL+"/listSimilarEntries?";
 		try{
 			String result[] = null;

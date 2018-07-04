@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class MultimediaServices {
 
-//	private static final String IMAGES_DIR = IndexService.getProperties().getProperty("images_source", "/home/oracle/Desktop/image_files");
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	String home() {
-		return "Hello World!";
-	}
 	
 	@RequestMapping(value = "index/listIndexes", method = RequestMethod.GET)
 	String[] listIndexes(String indexName){
@@ -133,8 +128,8 @@ public class MultimediaServices {
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(MultimediaServices.class, args);
-	}
+//	public static void main(String[] args) throws Exception {
+//		SpringApplication.run(MultimediaServices.class, args);
+//	}
 
 }
