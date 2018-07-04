@@ -1,0 +1,69 @@
+<div class="jumbotron">  
+	
+  <div class="row">
+    
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <h3>Image Search</h3>
+      <p>Please upload an image to search for similar images</p>
+      <div>
+    	  <label class="btn btn-success" ng-hide="images.length > 0">Browse
+    	  	<input id="input" type="file" style="display: none;" accept=".jpg, .jpeg, .png" name="userFile">
+    		</label>
+        <!-- <button type="button" class="btn btn-warning" ng-show="images.length > 0" ng-click='clear()'>Upload</button> -->
+      </div>
+      <button type="button" class="btn btn-warning" ng-show="images.length > 0" ng-click='clear()'>Clear Results</button>
+    </div>
+    
+    <div class="col-sm-6 col-md-6 col-lg-6 uploaded-image" ng-show="images.length > 0">
+      <span class="uploaded-text">Uploaded Image:</span>
+      <span>
+        <img id="uploaded" class="img-thumbnail" alt="200x200" src="images/1.jpg">
+      </span>
+    </div>
+
+	</div>
+
+	<div ng-show="images.length > 0">
+		<h3>Results</h3>
+		<div class="row">
+			<div class="col-sm-3 text-center top-buffer">
+				<img id="0" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="1" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="2" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="3" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="4" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="5" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="6" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="7" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="8" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="9" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="10" class="img-thumbnail" alt="200x200">
+      </div>
+      <div class="col-sm-3 text-center top-buffer">  
+        <img id="11" class="img-thumbnail" alt="200x200">
+			</div> 
+		</div>
+
+	</div>
+  
+</div>
