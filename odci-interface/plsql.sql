@@ -1,12 +1,3 @@
---Drop table "IMG_TABLE";
---Drop OPERATOR is_lucene_similar ;
---Drop FUNCTION bt_is_lucene_similar;
---Drop TYPE BODY ODCIIndex;
---Drop TYPE ODCIIndex force;
---Drop INDEXTYPE LIREINDEXTYPE;
-
-
-
 CREATE OR REPLACE TYPE ODCIIndex AS OBJECT
 (
   key INTEGER,
@@ -97,15 +88,10 @@ BEGIN
 END;
 /
 
---drop function f_similarity;
-
 
 CREATE OR REPLACE OPERATOR similarity 
 BINDING (BFILE, VARCHAR2) RETURN NUMBER 
 USING f_similarity;
-
---drop operator similarity;
-
 
 
 
@@ -122,28 +108,15 @@ CREATE INDEX "LIRE" ON "IMG_TABLE" ("COLUMN1")
 INDEXTYPE IS "LIREINDEXTYPE" ;
 
 
-
---DROP INDEX "LIRE";
-
-
 CREATE OR REPLACE DIRECTORY IMG_DIR AS '/home/oracle/Desktop/image_files';
 
 INSERT INTO "IMG_TABLE" ("COLUMN1") VALUES (BFILENAME('IMG_DIR', '1.jpg'));
 
 
---select * from IMG_TABLE;
-
---DELETE FROM IMG_TABLE;
-
-
-
-
-
-
 
 
 DECLARE 
-   a number(6) := 1; 
+   a number(6) := 0; 
 BEGIN 
    WHILE a < 9908 LOOP 
       INSERT INTO "IMG_TABLE" ("COLUMN1") VALUES (BFILENAME('IMG_DIR', CONCAT(a,'.jpg')));
