@@ -43,7 +43,7 @@ public class ODCIIndex implements CustomDatum, CustomDatumFactory {
 	/**
 	 * BASE_URL where restful services are available to interact with LIRE
 	 */
-	private static final String BASE_URL = "http://localhost:8090/index";
+	private static final String BASE_URL = "http://localhost:9090/index";
 	
 	/**
 	 * BASE_PATH where we can create log folder to save application logs
