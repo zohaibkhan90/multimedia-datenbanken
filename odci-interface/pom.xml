@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org</groupId>
+	<artifactId>myproject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<dependencies>
+		<!-- mvn install:install-file -Dfile=CartridgeServices.jar -DgroupId=org.cs.uni.passau -DartifactId=cartridgeservices -Dversion=1.0 -Dpackaging=jar -->
+		<dependency>
+		      <groupId>org.cs.uni.passau</groupId>
+		      <artifactId>cartridgeservices</artifactId>
+		      <version>1.0</version>
+		</dependency>
+		<!-- mvn install:install-file -Dfile=ODCI.jar -DgroupId=org.odci.uni.passau -DartifactId=odci -Dversion=1.0 -Dpackaging=jar -->		
+		<dependency>
+		      <groupId>org.odci.uni.passau</groupId>
+		      <artifactId>odci</artifactId>
+		      <version>1.0</version>
+		</dependency>
+		<!-- mvn install:install-file -Dfile=ojdbc8_g.jar -DgroupId=org.ojdbc.uni.passau -DartifactId=ojdbc -Dversion=1.0 -Dpackaging=jar -->
+		<dependency>
+		      <groupId>org.ojdbc.uni.passau</groupId>
+		      <artifactId>ojdbc</artifactId>
+		      <version>1.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>ODCI</finalName>
+		<plugins>
+
+		  <!-- download source code in Eclipse, best practice -->
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-eclipse-plugin</artifactId>
+			<version>2.9</version>
+			<configuration>
+				<downloadSources>true</downloadSources>
+				<downloadJavadocs>false</downloadJavadocs>
+			</configuration>
+		  </plugin>
+			
+		  <!-- Set a compiler level -->
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.3.2</version>
+			<configuration>
+				<source>${jdk.version}</source>
+				<target>${jdk.version}</target>
+			</configuration>
+		  </plugin>
+
+		  <!-- Make this jar executable -->
+		  <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+<!-- 			   <archive>
+			     <manifest>
+				<mainClass></mainClass>
+			     </manifest>
+			   </archive> -->
+			</configuration>
+		  </plugin>
+		</plugins>
+	</build>
+
+</project>
