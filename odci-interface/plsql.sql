@@ -88,11 +88,9 @@ BEGIN
 END;
 /
 
-
 CREATE OR REPLACE OPERATOR similarity 
 BINDING (BFILE, VARCHAR2) RETURN NUMBER 
 USING f_similarity;
-
 
 
 
@@ -108,9 +106,9 @@ CREATE INDEX "LIRE" ON "IMG_TABLE" ("COLUMN1")
 INDEXTYPE IS "LIREINDEXTYPE" ;
 
 
-CREATE OR REPLACE DIRECTORY IMG_DIR AS '/home/oracle/Desktop/image_files';
 
-INSERT INTO "IMG_TABLE" ("COLUMN1") VALUES (BFILENAME('IMG_DIR', '1.jpg'));
+
+CREATE OR REPLACE DIRECTORY IMG_DIR AS '/home/oracle/Desktop/image_files';
 
 
 
@@ -125,7 +123,7 @@ BEGIN
 END; 
 /
 
-
+commit;
 --Once all images inserted in database, uncomment and run below query to get similarity results
-SELECT similarity(COLUMN1, '/home/oracle/Desktop/image_files/0.jpg') as sim, COLUMN1
-FROM IMG_TABLE WHERE similarity(COLUMN1, '/home/oracle/Desktop/image_files/0.jpg') > 0;
+--SELECT similarity(COLUMN1, '/home/oracle/Desktop/image_files/0.jpg') as sim, COLUMN1
+--FROM IMG_TABLE WHERE similarity(COLUMN1, '/home/oracle/Desktop/image_files/0.jpg') > 0;
