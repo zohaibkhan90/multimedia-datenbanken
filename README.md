@@ -1,29 +1,17 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Multimedia databases ODCI Index implementation with LIRE.
+* 1.0
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+Follow the instructions provided in this document:
+https://docs.google.com/document/d/1ObqAPO2yp2whjpECZzd5nWPir9gYFaw6tm_KbdYw5SI/edit
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* malik.zohaib90@gmail.com for backend
+* anasxiddiqi@gmail.com for frontend
